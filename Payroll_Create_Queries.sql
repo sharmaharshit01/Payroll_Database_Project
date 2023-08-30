@@ -1,5 +1,7 @@
 CREATE DATABASE Payroll;
+
 CREATE SCHEMA dbo;
+
 CREATE TABLE dbo.Employee(
 Employee_Id int(6),
 First_Name VARCHAR(30),
