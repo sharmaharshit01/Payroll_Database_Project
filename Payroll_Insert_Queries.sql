@@ -74,21 +74,11 @@ INSERT INTO dbo.Leave VALUES (60, 101, str_to_date('26-04-23', '%d-%m-%y'));
 
 INSERT INTO dbo.Attendance VALUES (90,10);
 INSERT INTO dbo.Attendance VALUES (91,20);
-INSERT INTO dbo.Attendence VALUES (90,16);
 INSERT INTO dbo.Attendance VALUES (92,30);
 INSERT INTO dbo.Attendance VALUES (93,40);
-INSERT INTO dbo.Attendence VALUES (91,23);
 INSERT INTO dbo.Attendance VALUES (94,45);
 INSERT INTO dbo.Attendance VALUES (95,56);
 INSERT INTO dbo.Attendance VALUES (96,58);
-INSERT INTO dbo.Attendance VALUES (92,12);
-INSERT INTO dbo.Attendence VALUES (93,44);
-INSERT INTO dbo.Attendence VALUES (91,53);
-INSERT INTO dbo.Attendance VALUES (92,29);
-INSERT INTO dbo.Attendance VALUES (95,20);
-INSERT INTO dbo.Attendance VALUES (96,15);
-INSERT INTO dbo.Attendance VALUES (94,43);
-INSERT INTO dbo.Attendance VALUES (96,34);
 
 
 
