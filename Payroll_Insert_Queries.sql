@@ -1,27 +1,4 @@
-SHOW TABLES in dbo;
-describe dbo.employee;
-describe dbo.department;
-describe dbo.project;
-describe dbo.account_details;
-describe dbo.education;
-describe dbo.leave;
-describe dbo.attendance;
-describe dbo.work_location;
-SELECT *FROM dbo.department;
-SELECT *FROM dbo.Employee;
-select * from dbo.Project;
-SELECT * FROM dbo.Project;
-SELECT * FROM dbo.account_details;
-SELECT * FROM dbo.education;
-SELECT * FROM dbo.leave;
-SELECT * FROM dbo.attendance;
-SELECT * FROM dbo.Work_Location;
-select * from dbo.employee_attendance;
-Select * from dbo.Department_Project;
-SELECT * FROM dbo.Salary;
-
-ALTER TABLE dbo.Work_Location ADD COLUMN Employee_Id Int(6);
-ALTER TABLE dbo.Work_Location ADD CONSTRAINT Location_FK FOREIGN KEY(Employee_Id) REFERENCES dbo.Employee(Employee_Id);
+#Insert queries for Department table
 
 INSERT INTO dbo.Department VALUES (1, 'Human Resources');
 INSERT INTO dbo.Department VALUES (2, 'Software Development');
@@ -32,6 +9,7 @@ INSERT INTO Department VALUES (6,'Data Engineering');
 INSERT INTO Department VALUES (7,'Manufacturing');
 INSERT INTO Department VALUES (8,'Quality Control');
 
+#Insert queries for Employee table
 
 INSERT INTO  dbo.Employee VALUES (101,'Ojas','Phansekar',STR_to_Date('14-04-16', '%d-%m-%Y'),'New York City','New York',1);
 INSERT INTO  dbo.Employee VALUES (102,'Vrushali','Patil',STR_to_Date('21-06-18', '%d-%m-%Y'),'Boston','Massachusetts',2);
@@ -44,6 +22,8 @@ INSERT INTO  dbo.Employee VALUES (108,'Shantanu','Savant',STR_to_Date('27-11-15'
 INSERT INTO  dbo.Employee VALUES (109,'Kalpita','Malvankar',STR_to_Date('24-04-16', '%d-%m-%Y'),'Boston','Massachusetts',8);
 INSERT INTO  dbo.Employee VALUES (110,'Saylee','Bhagat',STR_to_Date('21-05-14', '%d-%m-%Y'),'San Francisco','California',7);
 
+#Insert queries for Project table
+
 INSERT INTO dbo.Project(Project_ID,Project_Name) VALUES(27,'Analysis');
 INSERT INTO dbo.Project VALUES (28,'Learning & Research',NULL);
 INSERT INTO dbo.Project VALUES (21, 'Dev', 'Whatever');
@@ -52,6 +32,8 @@ INSERT INTO dbo.Project VALUES (23, 'Test', 'Focus');
 INSERT INTO dbo.Project VALUES (24, 'Research', 'Focus on everything');
 INSERT INTO dbo.Project VALUES (25, 'Arts & Crafts', 'Mandola Art');
 INSERT INTO dbo.Project VALUES (26, 'Next Steps', 'Find some way out');
+
+#Insert queries for Account_Details table
 
 INSERT INTO dbo.Account_Details VALUES (40, 'ICICI', 201234, 101);
 INSERT INTO dbo.Account_Details VALUES (41, 'HDFC', 201235, 102);
@@ -64,6 +46,8 @@ INSERT INTO dbo.Account_Details VALUES (47,'PNB', 201241, 108);
 INSERT INTO dbo.Account_Details VALUES (48,'ICICI', 201242, 109);
 INSERT INTO dbo.Account_Details VALUES (49,'AXIS', 201243, 110);
 
+#Insert queries for Education table
+
 INSERT INTO dbo.Education VALUES (10, 101, 'M.Tech', 2017);
 INSERT INTO dbo.Education VALUES (11, 102, 'B.Tech', 2019);
 INSERT INTO dbo.Education VALUES (12, 103, 'BCA', 2020);
@@ -72,6 +56,8 @@ INSERT INTO dbo.Education VALUES (14, 105, 'MBA', 2018);
 INSERT INTO dbo.Education VALUES (15, 106, 'BCA', 2017);
 INSERT INTO dbo.Education VALUES (16, 107, 'MCA', 2020);
 INSERT INTO dbo.Education VALUES (17, 108, 'B.Tech', 2021);
+
+#Insert queries for Leave table
 
 INSERT INTO dbo.Leave VALUES (51, 104, str_to_date('20-06-23','%d-%m-%y'));
 INSERT INTO dbo.Leave VALUES (52, 105, str_to_date('13-07-22','%d-%m-%y'));
@@ -84,6 +70,8 @@ INSERT INTO dbo.Leave VALUES (58, 110, str_to_date('11-01-23', '%d-%m-%y'));
 INSERT INTO dbo.Leave VALUES (59, 101, str_to_date('11-05-23', '%d-%m-%y'));
 INSERT INTO dbo.Leave VALUES (60, 101, str_to_date('26-04-23', '%d-%m-%y'));
 
+#Insert queries for Attendance table
+
 INSERT INTO dbo.Attendance VALUES (90,10);
 INSERT INTO dbo.Attendance VALUES (91,20);
 INSERT INTO dbo.Attendance VALUES (92,30);
@@ -92,20 +80,21 @@ INSERT INTO dbo.Attendance VALUES (94,45);
 INSERT INTO dbo.Attendance VALUES (95,56);
 INSERT INTO dbo.Attendance VALUES (96,58);
 
+#Insert queries for Work_Location table
+
 INSERT INTO dbo.Work_Location VALUES (71, 'North', 4, 'Lucknow', 'Uttar Pradesh',101);
 INSERT INTO dbo.Work_Location VALUES (72, 'North', 100, 'Gurgaon', 'Haryana',102);
 INSERT INTO dbo.Work_Location VALUES (73, 'South', 56, 'Banglore', 'Karnataka',103);
 INSERT INTO dbo.Work_Location VALUES (74, 'South', 62, 'Chennai', 'Tamil Nadu',104);
 INSERT INTO dbo.Work_Location VALUES (75, 'West', 36, 'Ahmedabad', 'Gujarat',105);
 INSERT INTO dbo.Work_Location VALUES (76, 'West', 93, 'Mumbai', 'Maharashtra',106);
-
 INSERT INTO dbo.Work_Location VALUES (77,'South',4,'San Francisco','California',107);
 INSERT INTO dbo.Work_Location VALUES (78,'South',2,'Seattle','Washington',108);
 INSERT INTO dbo.Work_Location VALUES (79,'South',25,'Alpharetta','Georgia',109);
 INSERT INTO dbo.Work_Location VALUES (80,'South',20,'Keene','New Hampshire',110);
 INSERT INTO dbo.Work_Location VALUES (81,'South',22,'Hampton','New Hampshire',109);
 
-DELETE FROM dbo.Work_Location WHERE Location_Id IN (71,72,73,74,75,76);
+#Insert queries for employee_attendance table
 
 INSERT INTO dbo.employee_attendance VALUES (101, 90);
 INSERT INTO dbo.employee_attendance VALUES (102,91);
@@ -118,6 +107,8 @@ INSERT INTO dbo.employee_attendance VALUES (108,91);
 INSERT INTO dbo.employee_attendance VALUES (109,92);
 INSERT INTO dbo.employee_attendance VALUES (110,93);
 
+#Insert queries for Department_Project table
+
 INSERT INTO dbo.Department_Project VALUES (1, 21);
 INSERT INTO dbo.Department_Project VALUES (2,22);
 INSERT INTO dbo.Department_Project VALUES (3,23);
@@ -126,6 +117,8 @@ INSERT INTO dbo.Department_Project VALUES (5,25);
 INSERT INTO dbo.Department_Project VALUES (6,26);
 INSERT INTO dbo.Department_Project VALUES (7,21);
 INSERT INTO dbo.Department_Project VALUES (8,24);
+
+#Insert queries for Salary table
 
 INSERT INTO dbo.Salary VALUES (1, 1000000, 75000,5000,3333.33, 40);
 INSERT INTO dbo.Salary VALUES (2, 850000, 63000, 4000, 3833.33, 41);
@@ -138,3 +131,38 @@ INSERT INTO dbo.Salary VALUES (8, 600000, 40000, 5500, 4500, 47);
 INSERT INTO dbo.Salary VALUES (9, 800000, 58000, 5000, 3666, 48);
 INSERT INTO dbo.Salary VALUES (10, 2000000, 150000, 9000, 7666, 41);
 
+#To see all the tables in Payroll database
+SHOW TABLES in dbo;
+
+#To check the structure for all tables
+
+describe dbo.employee;
+describe dbo.department;
+describe dbo.project;
+describe dbo.account_details;
+describe dbo.education;
+describe dbo.leave;
+describe dbo.attendance;
+describe dbo.work_location;
+describe dbo.employee_attendance;
+describe dbo.Department_Project;
+describe dbo.Salary;
+
+#To check the data inserted into tables
+
+SELECT * FROM dbo.department;
+SELECT * FROM dbo.Employee;
+SELECT * FROM dbo.account_details;
+SELECT * FROM dbo.education;
+SELECT * FROM dbo.leave;
+SELECT * FROM dbo.attendance;
+SELECT * FROM dbo.Work_Location;
+SELECT * from dbo.employee_attendance;
+SELECT * from dbo.Department_Project;
+SELECT * FROM dbo.Salary;
+SELECT * FROM dbo.project;
+
+#Alter queries to change the DDL by adding column and foreign key constraint
+
+ALTER TABLE dbo.Work_Location ADD COLUMN Employee_Id Int(6);
+ALTER TABLE dbo.Work_Location ADD CONSTRAINT Location_FK FOREIGN KEY(Employee_Id) REFERENCES dbo.Employee(Employee_Id);
